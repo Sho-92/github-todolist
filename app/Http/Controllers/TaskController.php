@@ -10,13 +10,13 @@ class TaskController extends Controller
 
     public function index()
     {
-        $tasks = Task::simplePaginate(5);//全てのタスクを取得
-        return view("tasks.index", ['tasks' => $tasks]); //'tasks'としてビューに渡す。
+        $tasks = Task::simplePaginate(5);
+        return view("tasks.index", ['tasks' => $tasks]);
     }
 
     public function create()
     {
-        return view('tasks.create'); //新規作成ページを表示
+        return view('tasks.create');
     }
 
     public function store(Request $request)
@@ -26,7 +26,7 @@ class TaskController extends Controller
             'details'=> 'nullable',
         ]);
 
-        Task::create($request->all()); //新規タスクを保存
+        Task::create($request->all()); 
         return redirect()->route('tasks.index');
     }
 

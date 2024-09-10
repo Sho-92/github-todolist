@@ -22,7 +22,7 @@
                                 @csrf
                                 <input type="checkbox" name="completed" value="1"
                                     {{ $task->completed ? 'checked' : '' }}
-                                    onchange="this.form.submit()"> <!-- チェックされたら即座に送信 -->
+                                    onchange="this.form.submit()"> 
                             </form>
                         </td>
                         <td class="title">{{ $task->title }}</td>
